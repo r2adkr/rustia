@@ -1,8 +1,10 @@
 #![deny(clippy::all)]
-
+mod types;
 use napi_derive::napi;
 
+use crate::types::nodetype::Node;
+
 #[napi]
-pub fn plus_100(input: u32) -> u32 {
-  input + 100
+pub struct Rustia {
+  pub nodes: Vec<Node>,
 }
