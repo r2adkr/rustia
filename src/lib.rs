@@ -1,5 +1,10 @@
 #![deny(clippy::all)]
+mod error;
+mod node;
+mod player;
+mod rest;
 mod types;
+mod ws;
 use crate::types::nodetype::Node;
 use napi_derive::napi;
 
@@ -32,6 +37,12 @@ impl Rustia {
     }
   }
   /// Returns information about registered nodes.
+  /// ### Example
+  /// ```javascript
+  /// [
+  ///   { name: 'test', host: '127.0.0.1:3000', secure: true }
+  /// ]
+  /// ```
   #[napi]
   pub fn get_nodes(&self) -> Vec<Node> {
     self.nodes.clone()
