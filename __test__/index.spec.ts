@@ -1,8 +1,13 @@
 import test from 'ava'
 
-import { plus100 } from '../index'
+import { Rustia } from '../index'
 
-test('sync function from native code', (t) => {
-  const fixture = 42
-  t.is(plus100(fixture), fixture + 100)
+test('Is Rustia Instant configured correctly?', (t) => {
+  const config = {
+    nodes: [{ name: "test", host: "localhost:2333", secure: true }, { name: "test", host: "localhost:3000", secure: false }]
+  };
+
+  const instance = new Rustia(config);
+  t.truthy(instance);
+  t.deepEqual(config.nodes, instance.getNodes())
 })

@@ -20,7 +20,7 @@ impl Rustia {
   /// ```javascript
   /// const options = {
   ///   nodes: [
-  ///     { name: "my-node", host: "127.0.0.1:2333", secure: false }
+  ///     { name: "my-node", host: "127.0.0.1:2333", secure: false, is_nodelink: true, session_id: "sid" }
   ///   ]
   /// };
   /// const rustia = new Rustia(options);
