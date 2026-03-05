@@ -16,6 +16,8 @@ use napi_derive::napi;
 pub struct Node {
   /// Node name
   pub name: String,
+  /// Node Password
+  pub auth: String,
   /// Server address (e.g., "localhost:2333"). Must include the port.
   pub host: String,
   /// Whether the server uses a secure connection

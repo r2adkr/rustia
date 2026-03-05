@@ -115,7 +115,7 @@ pub struct PlayerUpdateEvent {
 
 #[derive(Deserialize)]
 #[serde(tag = "op", rename_all = "camelCase")]
-pub enum LavalinkMessage {
+pub enum NodeMessage {
   Ready(ReadyEvent),
   Stats(StatsEvent),
   PlayerUpdate(serde_json::Value),
